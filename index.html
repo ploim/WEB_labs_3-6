@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Food Construct</h1>
+        <nav> 
+            <a href="#">О нас </a>
+            <a id="active" href="#">Собрать ланч </a>
+            <a href="#">Заказы </a>
+            <a href="#contacts">Контакты </a>
+            
+        </nav>
+        <h1>Доступные для заказа комбо</h1>
+        <div id="options-block">
+            <div class="option">
+                <div>
+                    <img class="icon" src="media/icons/soup.png">
+                    <p>Супы</p>
+                </div>         
+                <div>
+                    <img class="icon" src="media/icons/main.png">
+                    <p>Главные блюда</p>
+                </div>     
+                <div>
+                    <img class="icon" src="media/icons/salad.png">
+                    <p>Салаты</p>
+                </div>     
+                <div>
+                    <img class="icon" src="media/icons/drink.png">
+                    <p>Напитки</p>
+                </div>            
+            </div>
+
+            <div class="option">
+                <div>
+                    <img class="icon" src="media/icons/soup.png">
+                    <p>Супы</p>
+                </div>         
+                <div>
+                    <img class="icon" src="media/icons/main.png">
+                    <p>Главные блюда</p>
+                </div>     
+                <div>
+                    <img class="icon" src="media/icons/drink.png">
+                    <p>Напитки</p>
+                </div>            
+            </div>
+
+            <div class="option">
+                <div>
+                    <img class="icon" src="media/icons/soup.png">
+                    <p>Супы</p>
+                </div>         
+                <div>
+                    <img class="icon" src="media/icons/salad.png">
+                    <p>Салаты</p>
+                </div>     
+                <div>
+                    <img class="icon" src="media/icons/drink.png">
+                    <p>Напитки</p>
+                </div>            
+            </div>
+
+            <div class="option">      
+                <div>
+                    <img class="icon" src="media/icons/main.png">
+                    <p>Главные блюда</p>
+                </div>     
+                <div>
+                    <img class="icon" src="media/icons/salad.png">
+                    <p>Салаты</p>
+                </div>     
+                <div>
+                    <img class="icon" src="media/icons/drink.png">
+                    <p>Напитки</p>
+                </div>            
+            </div>
+
+            <div class="option">    
+                <div>
+                    <img class="icon" src="media/icons/main.png">
+                    <p>Главные блюда</p>
+                </div>      
+                <div>
+                    <img class="icon" src="media/icons/drink.png">
+                    <p>Напитки</p>
+                </div>            
+            </div>
+
+            <div class="option">
+                <div>
+                    <img class="icon" src="media/icons/desert.png">
+                    <p>Десерт</p>
+                </div>              
+            </div>
+        </div>
+        
+    </header>
+
+    <main>
+        <div id="soup-filters">
+            <button class="filter-button" data-kind="fish" onclick="load_soups(filter='fish')">Рыбные</button>
+            <button class="filter-button" data-kind="meat" onclick="load_soups(filter='meat')">Мясные</button>
+            <button class="filter-button" data-kind="veg" onclick="load_soups(filter='veg')">Вегетарианские</button>
+        </div>
+        
+        <section id="soup">
+        </section>
+
+        <div id="dish-filters">
+            <button class="filter-button" data-kind="fish" onclick="load_main_dishes(filter='fish')">Рыбные</button>
+            <button class="filter-button" data-kind="meat" onclick="load_main_dishes(filter='meat')">Мясные</button>
+            <button class="filter-button" data-kind="veg" onclick="load_main_dishes(filter='veg')">Вегетарианские</button>
+        </div>
+        <section id="main_dish">
+        </section>
+
+        <section id ='drink'>
+        </section>
+
+        <div id="salad-filters">
+            <button class="filter-button" data-kind="fish" onclick="load_salads(filter='fish')">Рыбные</button>
+            <button class="filter-button" data-kind="meat" onclick="load_salads(filter='meat')">Мясные</button>
+            <button class="filter-button" data-kind="veg" onclick="load_salads(filter='veg')">Вегетарианские</button>
+        </div>
+        <section id ='salad'>
+        </section>
+
+        <div id="dessert-filters">
+            <button class="filter-button" data-kind="small" onclick="load_desserts(filter='small')">Малая порция</button>
+            <button class="filter-button" data-kind="medium" onclick="load_desserts(filter='medium')">Средняя порция</button>
+            <button class="filter-button" data-kind="big" onclick="load_desserts(filter='big')">Большая порция</button>
+        </div>
+        <section id ='dessert'>
+        </section>
+
+    </main>
+    
+    
+    <form id='construct_form' method="post" action=" https://httpbin.org/post">
+        <h1>Сделать заказ</h1>
+        <div>
+            <div id="order">
+                    <h2 id="order_h2">Ваш заказ</h2>
+                <label>Супы</label>
+                <select  name="soup" required disabled>  
+                </select>
+                <label>Главное блюдо</label>
+                <select name="main_dish" required disabled>
+                </select>
+                <label>Напиток</label>
+                <select name="drink" required disabled>
+                </select>
+                <label>Салат</label>
+                <select name="salad" required disabled>
+                </select>
+                <label>Десерт</label>
+                <select name="dessert" required disabled>
+                </select>
+                <label>Комментарии к заказу</label>
+                <textarea></textarea>
+
+                
+            </div>
+            <div id="client-info">
+                <h2>Ваши данные</h2>
+                <label>Имя</label>
+                <input type="text" name="name-inp" required>
+                <label>Email</label>
+                <input type="email" name="email-inp" required>
+                <div class="left-placed-labels-inputs">
+                    <input type="checkbox" name="ann-inp" checked>
+                    <label>Получать информацию о скидках и акцциях</label>
+                </div>
+                <label>Номер телефона</label>
+                <input type="tel" name="phone-inp" required>
+                <label>Адрес доставки</label>
+                <input type="text" name="address-inp" required>
+                <label>Время доставки:</label>
+                <div class="left-placed-labels-inputs">
+                    <input type="radio" value=1 name="delivery-time-type">
+                    <label>Как можно скорее</label>
+                    <input type="radio" value=2 name="delivery-time-type">
+                    <label>К указанному времени</label>
+                </div>
+                
+                <label>Укажите время доставки</label>
+                <input type="time" step=300 max="23:00" min="07:00" name="time-delivery-choice">
+                <div id = 'buttons-block'>
+                    <button type="reset">Сбросить</button>
+                    <button type='submit'>Отправить</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    </form>
+    
+    <footer id="contacts">
+        <p>Позвонить нам +7-000-000-00-00</p>
+    </footer>
+    <div id="notification" class='hidden'>
+        <p>Это всплывающее уведомление</p>
+        <button id="closeNotification" onclick="close_notification()">Окей></button>
+    </div>      
+    <script src="scripts/arrays.js" defer></script>
+    <script  src="scripts/loading.js" defer></script>
+    <script  src="scripts/script.js" defer></script>
+</body>
+</html>
